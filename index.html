@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8">
         <title>Thousand sunny</title>
+        <meta name="viewport" content="width=device-width, user-scalable=no">
         <link rel="stylesheet" href="./styles/style.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,8 +19,37 @@
         <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">  
     </head>
     <body>
-
+        <div class="contanier">
      <header>
+        <div class="burger-nav">
+            <div class="burger">
+                <span></span>
+            </div>
+            <div class="nav-list__burger">
+            <ul class="nav-list__burger__ul">
+                <li class="nav-item__burger">
+                    <a href="">Home</a>
+                </li>
+                <li class="nav-item__burger">
+                    <a href="">Destination</a>
+                </li>
+                <li class="nav-item__burger">
+                    <a href="">About</a>
+                </li>
+                <li class="nav-item__burger">
+                    <a href="">Partner</a>
+                </li>
+            </ul> 
+        </div>
+            <ul class="authentication">
+                <li class="login">
+                    <a href="">Login</a>
+                </li>
+                <li class="register">
+                    <a href="">Register</a>
+                </li>
+            </ul>
+        </div>
       <nav>
         <ul class="nav-list">
             <li class="nav-item">
@@ -35,11 +65,14 @@
                 <a href="">Partner</a>
             </li>
         </ul>  
-            <div class="logo">
+            <a href="" class="logo">
                 <div class="circle-1">
                     <div class="circle-2">
                     </div>
                 </div>
+            </a>
+            <div >
+                
             </div>
         <ul class="authentication">
             <li class="login">
@@ -50,21 +83,29 @@
             </li>
         </ul>
       </nav> 
-      <div class="guides">
-        <p class="guides__title">Guides by Thousand Sunny</p>
-        <p class="guides__content">Packed with tips and advice from our
-             on-the-ground experts, our city guides app (iOS and Android)
-              is the ultimate resource before and during a trip.</p>
-        <div class="button-download">
-            <a href="">Download</a>
-        </div>      
+      <div class="header-bottom">
+        <div class="guides">
+            <p class="guides__title">Guides by Thousand Sunny</p>
+            <p class="guides__content">Packed with tips and advice from our
+                 on-the-ground experts, our city guides app (iOS and Android)
+                  is the ultimate resource before and during a trip.</p>
+            <div class="button-download">
+                <a href="">Download</a>
+            </div>      
+          </div>
+          <div class="thousand">
+            <img class="Thousand__img" src="./images/Thousand-03.png" alt="Thousand sunny image">
+          </div>
       </div>
-      <div class="thousand">
-        <img class="Thousand__img" src="./images/Thousand-03.png" alt="Thousand sunny image">
-      </div>
+    </div>
+    
+     
+    
      </header>
 
      <section class="main-testimonials">
+        <div class="contanier">
+      <div class="contanier-testimonials">
         <div class="testimonials">
             <div class="testimonials__title">
                 <p>Testimonials</p>
@@ -86,13 +127,16 @@
             </div>
         </div>
         <div class="founder">
-            <div class="founder__img">
-                <img src="./images/founder-photo.png" alt="founer photo">
+            <div>
+                <img class="founder__img" src="./images/founder-photo.png" alt="founer photo">
             </div>
         </div>
+    </div>
+</div>
      </section>
 
      <section class="main-tranding">
+        <div class="contanier">
         <div class="tranding__stories">
             <div class="tranding__title">
                 <p>Trending stories</p>
@@ -135,9 +179,11 @@
                 </div>
             </div>
         </div>
+    </div>
      </section>
 
      <footer>
+        <div class="contanier">
         <div class="footer__info">
             <div class="footer__logo">
                 <div class="circle-1">
@@ -151,7 +197,14 @@
         <div class="social-media">
             <img class="social-media__img" src="./images/social media.png" alt="social media">
         </div>
+        </div>
      </footer>
-
+    <script>
+        document.querySelector('.burger').addEventListener('click', function(){
+            this.classList.toggle('active');
+            document.querySelector('.nav-list__burger').classList.toggle('open')
+            document.querySelector('.burger').classList.toggle('open_burg')
+        })
+    </script>
     </body>
 </html>

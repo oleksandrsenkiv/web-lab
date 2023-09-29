@@ -1,15 +1,15 @@
 .main-tranding{
-    width: 100%;
-    height: 750px;
+    max-height: 100%;
     background-color: white;
     position: relative;
+    margin-top: 50px;
 }
 
 .tranding__title{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 80px;
+    margin-bottom: 50px;
 }
 
 .tranding__title p{
@@ -24,28 +24,34 @@
 }
 
 .tranding__stories{
-    width: 80%;
-    margin: 7%;
-    margin-left: 10%;
-    margin-right: 10%;
+    max-width: 80%;
+    margin: 0 auto;
     height: 80%;
+
 }
 
 .tranding__blogs{
     display: flex;
     justify-content: space-between;
+    max-width: 100%;
+    max-height: 100%;
+    flex-wrap: wrap;
+    
 }
 
 .tranding__blogs div{
     display: flex;
     flex-direction: column; 
+    margin-bottom: 50px;
+    cursor: pointer;
+    transition: .25s ease;
+    
 }
 
 .tranding__blogs div img{
     max-width: 100%;
     max-height: 100%;
-    height: 231px;
-    width: 261px;
+    height:auto;
 }
 
 .tranding__blog__title{
@@ -68,4 +74,134 @@
     font-family: 'Inter', sans-serif;
     font-weight: 400;
     color: orange;
+}
+
+.founder{
+    display: flex;
+    padding-top: 30px;
+    align-content: center;
+    justify-content: center;
+
+}
+
+/*animations*/
+
+.tranding__blogs div:hover{
+    transform: scale(1.2);
+}
+
+/*adaptive*/
+@media (max-width: 1024px) {
+    .tranding__blogs div{
+        transform: scale(1.2);
+        margin-bottom: 100px;
+        margin-left: 40px;
+        margin-right: 40px;
+    }
+    .tranding__blogs div:hover{
+        transform: scale(1.1);
+        
+    }
+
+}
+
+
+
+@media (max-width: 768px) {
+    .tranding__blogs div{
+        padding-bottom: 4%;
+        transform: scale(1);
+    }
+
+    .tranding__blogs div:last-child{
+        padding-bottom: 2%;
+    }
+
+    .tranding__title a{
+        display: none;
+    }
+
+    .tranding__title p{
+        font-size: 50px;
+        padding-bottom: 10px;
+        margin-top: 0;
+        font-family: 'Playfair Display', serif;
+    }
+
+    .tranding__blogs{
+        display: flex;
+        justify-content: space-between;
+        max-width: 100%;
+        max-height: 100%;
+        flex-direction: column;
+    }
+
+    .tranding__stories{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tranding__blog__title{
+        font-family: 'Inter', sans-serif;
+        font-size: 25px;
+        font-weight: 700;
+        color: black;
+        width: auto;
+        
+    
+    }
+    
+    .tranding__blog__content{
+        font-family: 'Inter', sans-serif;
+        font-weight: 400;
+        color: #7D7987;
+        font-size: 20px;
+        width: auto;
+    }
+    
+    .tranding__blogs div a{
+        font-family: 'Inter', sans-serif;
+        font-weight: 400;
+        color: orange;
+        font-size: 18px;
+    }
+
+    .tranding__blogs div img{
+        max-width: none;
+        max-height: none;
+    }
+
+
+}
+
+@media (max-width:320px) {
+    .tranding__stories{
+        margin: 0;
+       
+    }
+
+    .tranding__blogs div{
+        margin-left: 20px;
+        margin-right: 20px;
+        margin-bottom: 40px
+    }
+
+    .tranding__title{
+        padding-left: 20px;
+        padding-bottom: 0;
+        
+    }
+}
+
+@media (max-width:2560px) and (min-width:2559px){
+    .tranding__title{
+        transform: scale(1.1);
+        margin-bottom: 120px;
+    }
+
+    .tranding__blogs div{
+        transform: scale(1.5);
+        margin-bottom: 200px;
+    }
 }

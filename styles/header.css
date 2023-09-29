@@ -1,10 +1,9 @@
 header{
     width: 85%;
-    height: 650px;
     margin-left: 10%;
     margin-right: 10%;
-    margin-bottom: 5%;
-    position: relative;
+    margin-bottom: 10%;
+    
 }
 
 nav{
@@ -13,11 +12,12 @@ nav{
     justify-content: space-between;
 }
 
+
 .nav-list{
     display: flex;
     flex: 2;
-    width: 30px;
-    height: 30px;
+    width: 1%;
+    height: 1%;
     padding:0px ;
 }
 
@@ -30,19 +30,16 @@ nav li{
     color: #B8BECD;
 }
 
-.nav-item{
-padding: 10px;
-}
-
 .authentication{
     display: flex;
     align-items: center;
     flex: 2;
     justify-content: center;
+    transition: all 2s ease;
 }
 
 .login{
-    margin-right: 20px;
+    margin-right: 5%;
     padding: 8px 35px;
     border: 1px solid orange;
     border-radius: 5px;
@@ -50,6 +47,7 @@ padding: 10px;
 
 .login a{
     color: orange;
+    transition: 0.25s ease;
 }
 
 .register{
@@ -58,10 +56,12 @@ padding: 10px;
     background-color: orange;
     border: 1px solid orange;
     border-radius: 5px;
+   
 }
 
 .register a{
     color: white;
+    transition: 0.25s ease;
 }
 
 .circle-1{
@@ -88,30 +88,29 @@ padding: 10px;
     align-items: center;
     justify-content: center;
     flex: 2;
-    width: 42px;
-    height: 42px;
+    width: 100%;
+    height: 100%;
+    transition: .25s ease;
 }
 
 .guides{
     display: flex;
     flex-direction: column;
-    position: absolute;
-    bottom: 70px;
-    left: 0;
+    transition: max-width 0.5s ease;
 }
 
 .guides__title{
     font-family: 'Playfair Display', serif;
     font-size: 40px;
     margin-bottom: 20px;
-    width: 400px;
+
 }
 
 .guides__content{
     font-family: 'Mulish', sans-serif;
     color: #B8BECD;
-    width: 400px;
     font-size: 19px;
+    max-width: 400px;
 }
 
 .button-download{
@@ -133,7 +132,259 @@ padding: 10px;
 }
 
 .thousand{
-    position: absolute;
-    bottom: 0;
-    right: 170px; 
+    display: flex;
+    padding-top: 30px;
+    align-content: center;
+    justify-content: center;
 }
+
+.Thousand__img{
+    max-width: 100%;
+    height: auto;
+    object-fit: cover; 
+    object-position: bottom; 
+}
+
+.header-bottom{
+    display: grid;
+    align-items: center;
+    justify-content: start;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+}
+
+.burger{
+    display: flex;
+    position: relative;
+    z-index: 50;
+    align-items: center;
+    justify-content: flex-start;
+    width: 50px;
+    height: 32px;
+}
+
+.burger span{
+    height: 5px;
+    width: 100%;
+    transform: scale(1);
+    background-color: black;
+    border-radius: 10px;
+}
+
+
+
+.burger-nav{
+    display: none;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.burger::before, .burger::after{
+    content: '';
+    position: absolute;
+    height: 5px;
+    width: 100%;
+    background-color: black;
+    transition: all .3s ease 0s;
+    border-radius: 10px;
+}
+
+.burger::before{
+    top: 0;
+}
+
+.burger::after{
+    height: 5px;
+    bottom: 0;
+}
+
+.burger.active span{
+    transform: scale(0);
+}
+
+.burger.active::before{
+    top: 50%;
+        transform: translateY(-50%);
+        transform: rotate(45deg);
+}
+
+.burger.active::after{
+    top: 50%;
+    transform: translateY(-50%);
+    transform: rotate(-45deg);
+}
+
+.open {
+    display: flex !important;
+    align-items: center;
+}
+
+.open_burg{
+    position: fixed;
+}
+
+.nav-list__burger{
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 40;
+    overflow-y: auto;
+    background-color: white;
+    animation: burgerAnimation .6s;
+    padding-top: 100px;
+
+}
+
+.nav-item__burger{
+    font-family: 'Mulish', sans-serif;
+    color: #B8BECD;
+    font-size: 40px;
+    padding-bottom: 20px;
+}
+
+
+/*animations*/
+
+.nav-item{
+    margin-right: 15px;
+    margin-top: 10px;
+    padding-bottom: 10px;
+    position: relative;
+
+}
+
+.nav-item::after{
+    content:"";
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: rgb(95, 190, 95);
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    transform: scaleX(0);
+    transition: .25s ease;
+
+}
+
+.nav-item:hover::after{
+    transform: scaleX(1);
+}
+
+.nav-item:hover{
+    color:rgb(95, 190, 95) ;
+}
+
+.logo:hover{
+    transform: scale(1.25);
+}
+
+.login a:hover{
+    color:rgb(95, 190, 95)
+}
+
+.register a:hover{
+    color:rgb(171, 211, 171)
+}
+
+@keyframes burgerAnimation {
+   from {opacity: 0}
+   to {opacity: 1} 
+}
+
+/*adaptive*/
+ @media  (max-width: 1000px) {
+    .logo{
+        display: none;
+    }
+    
+ }
+
+ @media (max-width: 768px) {
+    .thousand{
+        display: none;
+    }
+
+    .header-bottom{
+        grid-template-columns: 1fr;
+        
+    }
+
+    .guides{
+        align-items: center;
+        transform: scale(1.1);
+    }
+
+    .guides__content{
+        font-size: 22px;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .authentication{
+        justify-content: flex-end;
+    }
+    .burger-nav{
+        display: flex;
+    }
+
+ }
+
+ @media (max-width:424px) {
+    .login{
+        margin-right: 5%;
+        padding: 8px 20px;
+    }
+
+    .register{
+        margin-right: 0px;
+        padding: 8px 20px;
+       
+    }
+ }
+
+ @media (max-width:320px) {
+    header{
+        padding-bottom: 30px;
+    }  
+ }
+
+ 
+
+ @media (max-width: 2560px) and (min-width:2559px){
+    nav li{
+        font-size: 25px;
+    }
+    .logo{
+        transform: scale(1.5);
+    }
+    .login{
+        transform: scale(1.1);
+    }
+    .register{
+        transform: scale(1.1);
+    }
+    .thousand{
+        margin-top: 50px;
+        transform: scale(1.2);
+    }
+    .guides{
+        transform: scale(1.5);
+    }
+    .header-bottom{
+        justify-items: center;
+    }
+    
+ }
+
+
+

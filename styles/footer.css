@@ -1,7 +1,8 @@
 footer{
-    height: 200px;
+    height: 180px;
     width: 100%;
     background-color: #F8F8F8;
+   
 }
 
 .footer__info{
@@ -23,7 +24,7 @@ footer{
 
 .footer__line{
     width: 80%;
-    height: 0.6%;
+    height: 2px;
     margin-left: 10%;
     margin-right: 10%;
     margin-top: 0%;
@@ -42,3 +43,49 @@ footer{
     width: 16%;
     height: auto;
 }
+
+@media (max-width: 1024px) {
+    .social-media__img{
+        transform: scale(1.2);
+    }
+
+}
+@media (max-width:768px) {
+    footer{
+        height: 120px;
+    }
+    .social-media__img{
+        transform: scale(1.6);
+    }
+}
+
+@media (max-width:500px) {
+    .social-media__img{
+        transform: scale(4);
+    }
+    footer{
+        height: 160px;
+    }
+    .footer__info {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .footer__info p{
+        font-size: 15px;
+    }
+}
+@media (max-width:2560px) and (min-width:2559px){
+    .footer__logo, .footer__info p{
+        transform: scale(1.5);
+    }
+    footer{
+        height: 200px;
+    }
+    .footer__line {
+        width: 1810px;
+        height: 2px;
+    }
+}
+
